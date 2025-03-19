@@ -1,11 +1,18 @@
+import datetime
+
 from aiogram import Router
+from aiogram.filters import Command
 from aiogram.types import Message
-from aiogram.filters import CommandStart
-from text import START_MESSAGE
+from database.crud import get_user_by_id, insert_to_table_users
 
 router = Router()
 
 
-@router.message(CommandStart())
+@router.message(Command('start'))
 async def cmd_start(message: Message):
-    await message.answer(START_MESSAGE)
+    user = get_user_by_id(message.from_user.id)
+    if user:
+        await message.answer('Привет друг')
+    else:
+        await message.answer('Привет я тебя запомнил)')
+        insert_to_table_users(message.from_user.id, datetime.datetime.now())

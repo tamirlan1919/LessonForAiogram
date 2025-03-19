@@ -1,2 +1,1 @@
-TOKEN = '5988846085:AAEdq-sw5zmn-5yedBxQRSXnUARUl8q-SPM'
-PRICE = [{'label': 'success-payment', 'amount': 10000}]
+TOKEN = '7936836917:AAEpkQweM38KeakL2rAEYjOQxh2eK5VWJaA'

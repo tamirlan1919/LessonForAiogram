@@ -1,7 +1,8 @@
 from aiogram import Router
 from .start import router as start_router
-from .book import router as booking_router
+from .admin import router as admin_router
 
 router = Router()
 
-router.include_routers(start_router,booking_router)
+router.include_routers(start_router, admin_router)
+
